@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 const DropdownMenu = () => {
   return (
-    <div className="bg-white transition ease-in duration-1000 absolute shadow-xl rounded-sm">
+    <div className="bg-white transition ease-in duration-1000 absolute shadow-xl rounded-sm z-10">
       <ul className="list-none w-48">
         <li className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white p-2 rounded-sm font-medium">
           Hot Wheels
