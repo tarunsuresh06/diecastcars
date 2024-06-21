@@ -30,12 +30,18 @@ export default function HeroImageSlider({ slides }: { slides: string[] }) {
         })}
       </div>
 
-      <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-10 text-3xl">
+      <div className="absolute top-0 h-full w-full justify-between items-center flex text-yellow-500 px-10 text-3xl ">
         <button onClick={previousSlide}>
-          <BsFillArrowLeftCircleFill />
+          <BsFillArrowLeftCircleFill
+            size={30}
+            className="hover:text-purple-950"
+          />
         </button>
         <button onClick={nextSlide}>
-          <BsFillArrowRightCircleFill />
+          <BsFillArrowRightCircleFill
+            size={30}
+            className="hover:text-purple-950"
+          />
         </button>
       </div>
 
@@ -47,8 +53,8 @@ export default function HeroImageSlider({ slides }: { slides: string[] }) {
                 setCurrent(i);
               }}
               key={"circle" + i}
-              className={`rounded-full w-5 h-5 cursor-pointer  ${
-                i == current ? "bg-white" : "bg-gray-500"
+              className={`rounded-full hidden md:inline-block  w-5 h-5 cursor-pointer  ${
+                i == current ? "bg-yellow-400" : "bg-violet-600"
               }`}
             ></div>
           );
