@@ -1,6 +1,5 @@
 import HeroImageSlider from "@/components/HeroImageSlider";
 import ProductCard from "@/components/ui/ProductCard";
-
 import {
   Carousel,
   CarouselContent,
@@ -8,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Testimonial from "@/components/Testimonial";
 
 export default function Home() {
   let slides = [
@@ -44,6 +44,13 @@ export default function Home() {
           </Carousel>
         </section>
       </div>
+      <section id="testimonials">
+        <div className="bg-center bg-cover bg-fixed bg-[url('https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg')] h-[500px] ">
+          <div className="wrapper flex justify-center items-center h-full">
+            <Testimonial />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
