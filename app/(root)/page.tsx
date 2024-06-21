@@ -16,7 +16,7 @@ export default function Home() {
     "https://opencart.mahardhi.com/MT04/fantastic/image/cache/catalog/banners/mainbanner2-1920x600.jpg",
   ];
   return (
-    <main>
+    <>
       <HeroImageSlider slides={slides} />
       <div className="wrapper">
         <section id="#newProducts">
@@ -44,6 +44,6 @@ export default function Home() {
           </Carousel>
         </section>
       </div>
-    </main>
+    </>
   );
 }
