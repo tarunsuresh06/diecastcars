@@ -9,7 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 const DropdownMenu = () => {
   return (
-    <div className="bg-white transition ease-in duration-1000 absolute shadow-xl rounded-sm z-10">
+    <div className="bg-white transition ease-in duration-1000 absolute shadow-xl rounded-sm z-10 top-14">
       <ul className="list-none w-48">
         <li className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white p-2 rounded-sm font-medium">
           Hot Wheels
@@ -44,11 +44,13 @@ const Dropdown = ({ title }: { title: string }) => {
 
   return (
     <div
-      className="relative"
+      className="relative h-full w-full"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <button>{title}</button>
+      <button className="flex justify-center items-center h-full w-full">
+        {title}
+      </button>
       {/* <DropdownMenu /> */}
       {isDropdownVisible && <DropdownMenu />}
     </div>
