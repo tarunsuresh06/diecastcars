@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { brandsLinks } from "@/constants";
 
 {
   /* DropDown Menu */
@@ -11,17 +13,25 @@ const DropdownMenu = () => {
   return (
     <div className="bg-white transition ease-in duration-1000 absolute shadow-xl rounded-sm z-10 top-14">
       <ul className="list-none w-48">
-        <li className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white p-2 rounded-sm font-medium">
-          Hot Wheels
-        </li>
-        <Separator />
-        <li className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white p-2 rounded-sm">
-          Barbie
-        </li>
-        <Separator />
-        <li className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white p-2 rounded-sm">
-          Win Magic
-        </li>
+        {brandsLinks.map(({ name, path }, i: number) => {
+          const hideSeparator = brandsLinks.length - 1 === i;
+          return (
+            <>
+              <li
+                key={i}
+                className="transition-all duration-3000 hover:bg-purple-600 hover: cursor-pointer text-black hover:text-white rounded-sm font-medium h-12"
+              >
+                <Link
+                  href={path}
+                  className="h-full w-full flex justify-start items-center p-2"
+                >
+                  {name}
+                </Link>
+              </li>
+              {hideSeparator ? null : <Separator />}
+            </>
+          );
+        })}
       </ul>
     </div>
   );
